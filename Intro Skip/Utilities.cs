@@ -7,8 +7,6 @@ namespace IntroSkip
 {
     internal static class Utilities
     {
-        public static readonly FieldAccessor<AudioTimeSyncController, AudioSource>.Accessor AudioTimeSyncSource = FieldAccessor<AudioTimeSyncController, AudioSource>.GetAccessor("_audioSource");
-
         public static void MigrateConfig(ref Config config)
         {
             FileInfo oldFile = new FileInfo(Path.Combine(UnityGame.UserDataPath, "IntroSkip.ini"));
