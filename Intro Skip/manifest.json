@@ -8,7 +8,7 @@
   "version": "4.0.3",
   "icon": "IntroSkip.UI.intro-skip.png",
   "dependsOn": {
-    "BSIPA": "^4.2.1",
+    "BSIPA": "^5.0.0",
     "SiraUtil": "^3.0.0",
     "BeatSaberMarkupLanguage": "^1.1.0"
   },
