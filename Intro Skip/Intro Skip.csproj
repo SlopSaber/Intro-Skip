@@ -53,6 +53,7 @@
     <Reference Include="BGLib.UnityExtension">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.UnityExtension.dll</HintPath>
     </Reference>
+    <Reference Include="Counters+" Private="false" />
     <Reference Include="BSML">
       <HintPath>$(BeatSaberDir)\Plugins\BSML.dll</HintPath>
       <Private>False</Private>

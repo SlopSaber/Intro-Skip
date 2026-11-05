@@ -1,4 +1,5 @@
 ﻿using BeatSaberMarkupLanguage;
+using IntroSkip.Counters;
 using System;
 using TMPro;
 using Tweening;
@@ -9,7 +10,7 @@ namespace IntroSkip.Displays
     internal class AnimatedSkipDisplayService : ISkipDisplayService, IDisposable
     {
         private readonly TimeTweeningManager _timeTweeningManager;
-        private TextMeshProUGUI? _skipPromptText;
+        private TMP_Text? _skipPromptText;
         private GameObject? _skipPromptObject;
         private bool _enabled;
 
@@ -23,6 +24,12 @@ namespace IntroSkip.Displays
 
         public void Show()
         {
+            if (!Created && SkipPromptHost.Text != null)
+            {
+                _skipPromptText = SkipPromptHost.Text;
+                _skipPromptObject = _skipPromptText.gameObject;
+            }
+
             if (!Created)
             {
                 _skipPromptObject = new GameObject("Intro Skip Prompt");
@@ -38,7 +45,7 @@ namespace IntroSkip.Displays
                 RectTransform canvasRect = (canvas.transform as RectTransform)!;
                 canvasRect!.sizeDelta = new Vector2(100, 50);
 
-                _skipPromptText = BeatSaberUI.CreateCurvedUIText(canvasRect, "Press Trigger To Skip", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, 10f), new Vector2(100, 20));
+                _skipPromptText = BeatSaberUI.CreateCurvedUIText(canvasRect, SkipPromptHost.PromptText, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, 10f), new Vector2(100, 20));
                 _skipPromptText.fontSize = 15f;
                 canvas.enabled = true;
 

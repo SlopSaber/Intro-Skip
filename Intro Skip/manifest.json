@@ -5,7 +5,7 @@
   "gameVersion": "1.45.3",
   "id": "IntroSkip",
   "name": "Intro Skip",
-  "version": "4.0.3",
+  "version": "4.1.0",
   "icon": "IntroSkip.UI.intro-skip.png",
   "dependsOn": {
     "BSIPA": "^5.0.0",
@@ -15,5 +15,21 @@
   "links": {
     "project-source": "https://github.com/Auros/Intro-Skip",
     "donate": "https://ko-fi.com/kyle1413k"
+  },
+  "loadAfter": [
+    "Counters+"
+  ],
+  "features": {
+    "CountersPlus.CustomCounter": {
+      "Name": "Intro Skip Prompt",
+      "Description": "Places the \"Press Trigger To Skip\" prompt with your other counters.",
+      "CounterLocation": "IntroSkip.Counters.SkipPromptCounter",
+      "PreviewLocation": "IntroSkip.Counters.SkipPromptCounterPreview",
+      "ConfigDefaults": {
+        "Enabled": true,
+        "Position": "AboveHighway",
+        "Distance": 0
+      }
+    }
   }
 }
